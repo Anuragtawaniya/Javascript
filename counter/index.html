@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>counter</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="board">
+            <button onclick="add()">+</button>
+            <h1 id="value">0</h1>
+            <button onclick="sub()">-</button>
+        </div>
+    </div>
+
+    <script>
+        let data = 0;
+        document.getElementById("value").innerHTML = data;
+
+        function add() {
+            data = data + 1;
+            document.getElementById("value").innerHTML = data;
+        }
+        function sub() {
+            if (data > 0) {
+                data = data - 1;
+                document.getElementById("value").innerHTML = data;
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

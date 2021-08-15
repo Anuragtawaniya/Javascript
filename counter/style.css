@@ -1,0 +1,25 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container button{
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 22px;
+    background: linear-gradient(to right,orange,tomato);
+    color: #fff;
+    outline: none;
+    border: none;
+}
+.board{
+    background: #fff;
+    box-shadow: 1px 1px 10px #e7e7e7e7 inset;
+    height: 300px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
