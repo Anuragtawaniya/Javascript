@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Antonio', sans-serif;
+  color: #fff;
+}
+html,
+body {
+  background: #242B2E;
+}
+.container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn{
+  background: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+#trun{
+  transition: 0.5s all;
+}
+header{
+  text-align: center;
+}
+header h1{
+  color: #5A20CB;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  margin: 20px 0;
+}
+footer{
+  margin: 20px 0;
+  text-align: center;
+}
+footer a{
+  display: inline-block;
+color: #857d96;
+margin: 10px 0;
+}
+.dev{
+  color: #5A20CB;
+}
+.fab{
+  margin: 0 5px;
+}
+.icons a{
+  color: #22CB5C;
+}
+.fab:hover{
+  color: #22CB5C;
+}
