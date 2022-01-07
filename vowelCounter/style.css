@@ -1,0 +1,27 @@
+*{
+    padding: 0;margin: 0;box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background: cornflowerblue;
+}
+textarea{
+    outline: none;
+    border: 1px solid orange;
+    padding: 10px;
+    width: 50%;
+}
+.bg{
+    background: orangered;
+    padding: 10px;
+    color: #fff;
+    margin: 20px 0;
+}
+.bg span{
+    margin: 0 10px;
+}

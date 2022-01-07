@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>VowelCounter</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <textarea name="" id="text" rows="10" onkeyup="countValue(this.value)"></textarea>
+
+        <div class="bg">
+            Vowels: <span id="count">0</span>
+            Total Len: <span id="len">0</span>
+            whiteSpaces: <span id="space">0</span>
+        </div>
+        <span>Made by Anurag</span>
+    </div>
+
+
+
+    <script>
+        function countValue() {
+            let VowelCount = document.getElementById("count");
+            let counter = 0;
+            let space = 0;
+            let getLength = document.getElementById("text").value.length;
+            let value = document.getElementById("text").value;
+            let operation = value.split('');
+            let vowel = ['a', 'e', 'i', 'o', 'u'];
+            let total = 0;
+            for (let letter of operation) {
+                if (letter == " ") {
+                    space++;
+                }
+                if (vowel.includes(letter)) {
+                    counter++;
+                }
+            }
+            VowelCount.innerHTML = counter;
+            document.getElementById("len").innerHTML = getLength;
+            document.getElementById("space").innerHTML = space;
+
+        }
+
+    </script>
+</body>
+
+</html>
