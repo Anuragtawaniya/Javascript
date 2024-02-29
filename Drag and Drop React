@@ -1,0 +1,78 @@
+import React, { useState } from "react";
+
+function App() {
+  const [draggedItem, setDraggedItem] = useState(null);
+  const [lists, setLists] = useState([
+    [
+      { id: 1, content: "Item 1" },
+      { id: 2, content: "Item 2" },
+      { id: 3, content: "Item 3" },
+      { id: 4, content: "Item 4" },
+    ],
+    [],
+  ]);
+
+  const handleDragStart = (e, id) => {
+    setDraggedItem(id);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e, targetListIndex) => {
+    e.preventDefault();
+    const newList = [...lists];
+    const item = newList
+      .find((list) => list.some((item) => item.id === draggedItem))
+      .find((item) => item.id === draggedItem);
+    const sourceListIndex = newList.findIndex((list) =>
+      list.some((item) => item.id === draggedItem)
+    );
+
+    if (item) {
+      newList[sourceListIndex] = newList[sourceListIndex].filter(
+        (item) => item.id !== draggedItem
+      );
+      newList[targetListIndex].push(item);
+      setLists(newList);
+      setDraggedItem(null);
+    }
+  };
+
+  const handleAddList = () => {
+    setLists([...lists, []]);
+  };
+
+  return (
+    <div className="App">
+      <h1>Drag and Drop Example</h1>
+      <div className="lists-container">
+        {lists.map((list, index) => (
+          <div
+            className="list"
+            key={index}
+            onDrop={(e) => handleDrop(e, index)}
+            onDragOver={handleDragOver}
+          >
+            <h2>List {index + 1}</h2>
+            {list.map((item) => (
+              <div
+                key={item.id}
+                className="item"
+                draggable
+                onDragStart={(e) => handleDragStart(e, item.id)}
+                onDragOver={handleDragOver}
+              >
+                {item.content}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <button onClick={handleAddList}>Add List</button>
+    </div>
+  );
+}
+
+export default App;
